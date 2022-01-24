@@ -3,6 +3,8 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
+  Button,
+  Linking,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -25,7 +27,8 @@ const App = () => {
 
   return (
     <View style={styles.body}>
-      <Text>Hello World!</Text>
+      <Text style={styles.text}>Hello World!</Text>
+      <Button title='Click Me!' onPress={()=>{Linking.openURL("https://www.google.com/")}} ></Button>
     </View>
   );
 };
@@ -37,7 +40,16 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center'
     
-  }
+  },
+
+  text:{
+    color:'#ffffff',
+    fontSize:20,
+    fontStyle:'italic'
+
+  },
+
+  
 });
 
 export default App;
