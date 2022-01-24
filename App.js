@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+import React,{useState} from 'react';
 import type {Node} from 'react';
 import {
   Button,
@@ -25,10 +25,16 @@ import {
 
 const App = () => {
 
+  const [name,setName] = useState('Gayan');
+
+  const onPressHandler = () =>{
+    setName('Hi! My name is Gayan');
+  }
+
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>Hello World!</Text>
-      <Button title='Click Me!' onPress={()=>{Linking.openURL("https://www.google.com/")}} ></Button>
+      <Text style={styles.text}>{name}</Text>
+      <Button title='Click Me!' onPress={onPressHandler} ></Button>
     </View>
   );
 };
